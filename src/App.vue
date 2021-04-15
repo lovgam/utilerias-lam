@@ -1,15 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-3">
+          <!--One of two columns-->
+          <DatosCliente/>
+        </div>
+        <div class="col-9">
+          <!--One of two columns-->
+          <h4>Mantenimiento de Zonas Geográficas Asignadas</h4>
+          <div class="cell cell-map">
+            <MapContainer v-on:select="selected = $event"></MapContainer>
+          </div>
+          <Botones/>
+        </div>
+      </div>
+  </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import 'bootstrap'
+import 'jquery'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import MapContainer from './components/MapContainer.vue'
+import DatosCliente from './components/DatosCliente.vue'
+import Botones from './components/Botones.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MapContainer,
+    DatosCliente,
+    Botones
   }
 }
 </script>
